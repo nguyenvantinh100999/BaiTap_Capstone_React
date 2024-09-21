@@ -25,18 +25,6 @@ const productReducer = createSlice({
         const newQuantity = state.arrProductDetail.quantity + payload.quantity;
         state.arrProductDetail.quantity = Math.max(newQuantity, 0);
       }
-      // let itemDetail = state.arrProductDetail.find(
-      //   (item) => item.id === payload.id
-      // );
-      // if (itemDetail) {
-      //   itemDetail = {
-      //     ...itemDetail,
-      //     quantity: state.arrProductDetail.quantity + payload.quantity,
-      //   };
-      //   state.arrProductDetail = state.arrProductDetail.map((item) =>
-      //     item.id === payload.id ? itemDetail : item
-      //   );
-      // }
     },
     setProductSearchAction: (state, action) => {
       state.arrProductSearch = action.payload;

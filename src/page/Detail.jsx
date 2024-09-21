@@ -71,8 +71,10 @@ const Detail = () => {
             onClick={() => {
               const action = addProductAction({
                 ...arrProductDetail,
+                quantity: arrProductDetail.quantity,
               });
               dispatch(action);
+              alert("Thêm thành công vào giỏ hàng");
             }}
           >
             Add to cart

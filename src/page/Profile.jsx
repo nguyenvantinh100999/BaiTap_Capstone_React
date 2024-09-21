@@ -29,15 +29,30 @@ const Profile = () => {
   console.log(order);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const getProfileApi = () => {
-    const actionThunk = getProfileActionAsync();
-    dispatch(actionThunk);
-    const actionPayload = setOrderAction(profile.ordersHistory);
-    dispatch(actionPayload);
+  // const getProfileApi = () => {
+  //   const actionThunk = getProfileActionAsync();
+  //   dispatch(actionThunk);
+  //   const actionPayload = setOrderAction(profile.ordersHistory);
+  //   dispatch(actionPayload);
+  // };
+  // Lấy thông tin profile
+  const getProfileApi = async () => {
+    await dispatch(getProfileActionAsync());
   };
   useEffect(() => {
     getProfileApi();
-  }, []);
+  }, [dispatch]);
+
+  // Thiết lập lịch sử đơn hàng khi profile đã được cập nhật
+  const setOrderHistory = () => {
+    if (profile && profile.ordersHistory) {
+      const actionPayload = setOrderAction(profile.ordersHistory);
+      dispatch(actionPayload);
+    }
+  };
+  useEffect(() => {
+    setOrderHistory();
+  }, [dispatch, profile]); // Chỉ phụ thuộc vào profile
 
   const colums = [
     {

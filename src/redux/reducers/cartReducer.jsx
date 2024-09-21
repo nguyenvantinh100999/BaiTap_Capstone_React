@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { http } from "../../util/setting";
+import { http, navigateHistory } from "../../util/setting";
+import { getProductApiActionThunk } from "./productReducer";
+import { getProfileActionAsync } from "./userReducer";
 
 const initialState = {
   cart: [
@@ -62,7 +64,9 @@ export const orderProductAction = (order) => {
       "https://shop.cyberlearn.vn/api/Users/order",
       order
     );
-    // const actionPayload = setCartOder(res.data.content);
-    // dispatch(actionPayload);
+    alert("Đặt hàng thành công");
+    const actionAsync = getProfileActionAsync();
+    dispatch(actionAsync);
+    navigateHistory.push("/profile");
   };
 };

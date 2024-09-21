@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Table } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import {
   changeQuantityProductAction,
   deleteProductAction,
@@ -10,10 +10,24 @@ import {
 import { http } from "../util/setting";
 const Cart = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { userLogin } = useSelector((state) => state.userReducer);
   const cartStore = useSelector((state) => state.cartReducer.cart);
   const { profile } = useSelector((state) => state.userReducer);
+  console.log(userLogin);
+  // Check if the user is logged in
+  const isLoggedIn = () => {
+    return !!profile.email; // Assuming profile.email indicates login status
+  };
 
-  // Create order detail payload
+  // Redirect if the user is not logged in
+  useEffect(() => {
+    if (!isLoggedIn()) {
+      alert("Vui lòng đăng nhập");
+      navigate("/login"); // Navigate to login page
+    }
+  }, [navigate, isLoggedIn]); // Depend on navigate and isLoggedIn
+
   const createOrderDetail = () => {
     return cartStore.map((item) => ({
       productId: item.id,
