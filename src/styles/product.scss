@@ -1,0 +1,96 @@
+@import './variableIndex';
+@import './baseIndex';
+.products {
+    background: $bg-primary-200;
+    // background: linear-gradient(
+    //     79deg,
+    //     rgba(189, 110, 113, 1) 20%,
+    //     rgba(205, 114, 93, 1) 60%,
+    //     rgba(184, 65, 38, 1) 92%,
+    //     rgba(163, 72, 51, 1) 100%
+    // );
+    padding: 100px 0;
+    .container {
+        text-align: center;
+        .product-clipped-text {
+            background-image: linear-gradient(
+                79deg,
+                rgba(189, 110, 113, 1) 20%,
+                rgba(205, 114, 93, 1) 60%,
+                rgba(184, 65, 38, 1) 92%,
+                rgba(163, 72, 51, 1) 100%
+            );
+            // linear-gradient(-45deg, #c5f9d7, #f7d486, #f27a7d);
+            h2 {
+                font-size: $text-12xl;
+                @extend .mb-8;
+            }
+        }
+        [class$="-clipped-text"] {
+            // Clip the background image in the shape of the text.
+            -webkit-background-clip: text;
+
+            // Make text color to transparent to reveal the background
+            color: transparent;
+
+            // Adjust background size to match the width of the content
+            display: inline-block;
+
+            // Add background-color as fallback, for cases where background-image doesn't work
+            background-color: rgb(189, 110, 113);
+        }
+
+        .row {
+            .col-3 {
+                // padding: 0;
+                .card {
+                    .card-body {
+                        overflow: hidden;
+                        &:hover {
+                            h4 {
+                                color: $text-primary-100;
+                                transition: all 0.5s;
+                            }
+                            background-color: rgb(189, 110, 113);
+                            transition: all 0.5s ease-in-out;
+                        }
+                        &:hover img{
+                            transform: scale(1.2,1.2);
+                            transition: all 0.5s;
+                        }
+
+                        img {
+                            transition: all 0.5s;
+                        }
+                        h4 {
+                            @include mText($text-2xl, $fw-semi, $text-primary-300);
+                        }
+                    }
+                    .card-footer {
+                        background-color: $bg-primary-200;
+                        height: 70px;
+                        .slide-btn {
+                            a {
+                                text-decoration: none;
+                                @include mButton(
+                                    $text-base,
+                                    $fw-semi,
+                                    $text-primary-100,
+                                    10px 20px,
+                                    2px solid $bg-primary-100,
+                                    10px,
+                                    $bg-primary-100,
+                                    $text-primary-300
+                                );
+                            }
+                        }
+                        h5 {
+                            @extend .m-0;
+                            @include mText($text-2xl, $fw-semi, $text-primary-100);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

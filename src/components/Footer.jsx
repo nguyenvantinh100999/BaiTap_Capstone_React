@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../styles/footer.scss";
 const Footer = () => {
   return (
     <footer className="footer">
@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="col">
               <div className="single-service">
                 <div className="service-icon">
-                  <img src="./assets/img/f-1.webp" alt="icon-1" />
+                  <img src="../../src/assets/img/f-1.png" alt="icon-1" />
                 </div>
                 <div className="serivce-cont">
                   <h3>Free delivery</h3>
@@ -20,7 +20,7 @@ const Footer = () => {
             <div className="col">
               <div className="single-service">
                 <div className="service-icon">
-                  <img src="./assets/img/f-2.webp" alt="icon-1" />
+                  <img src="../../src/assets/img/f-2.webp" alt="icon-1" />
                 </div>
                 <div className="serivce-cont">
                   <h3>Online Support 24/7</h3>
@@ -31,7 +31,7 @@ const Footer = () => {
             <div className="col">
               <div className="single-service">
                 <div className="service-icon">
-                  <img src="./assets/img/f-3.webp" alt="icon-1" />
+                  <img src="../../src/assets/img/f-3.webp" alt="icon-1" />
                 </div>
                 <div className="serivce-cont">
                   <h3>Money Return</h3>
@@ -42,7 +42,7 @@ const Footer = () => {
             <div className="col">
               <div className="single-service">
                 <div className="service-icon">
-                  <img src="./assets/img/f-5.webp" alt="icon-1" />
+                  <img src="../../src/assets/img/f-5.webp" alt="icon-1" />
                 </div>
                 <div className="serivce-cont">
                   <h3>Member Discount</h3>
@@ -53,7 +53,7 @@ const Footer = () => {
             <div className="col">
               <div className="single-service">
                 <div className="service-icon">
-                  <img src="./assets/img/f-6.webp" alt="icon-1" />
+                  <img src="../../src/assets/img/f-6.webp" alt="icon-1" />
                 </div>
                 <div className="serivce-cont">
                   <h3>SECURE PAYMENT</h3>
@@ -72,7 +72,7 @@ const Footer = () => {
                 <div className="footer-logo">
                   <a href="#">
                     <img
-                      src="./assets/img/logonike1-removebg-preview.png"
+                      src="../../src/assets/img/logonike1-removebg-preview.png"
                       alt="logoshop"
                     />
                   </a>
@@ -233,7 +233,7 @@ const Footer = () => {
             </div>
             <div className="col-lg-6 col-md-6">
               <div className="payment">
-                <img alt src="./assets/img/payment.webp" />
+                <img alt src="../../src/assets/img/payment.webp" />
               </div>
             </div>
           </div>

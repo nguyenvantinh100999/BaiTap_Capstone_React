@@ -1,0 +1,88 @@
+@import './variableIndex';
+@import './baseIndex';
+.carousels {
+    .banner {
+        .carousel {
+            .carousel-indicators [data-bs-target] {
+                background-color: $bg-primary-300;
+            }
+            .carousel-inner {
+                .carousel-item {
+                    position: relative;
+                    
+                    .carousel-caption {
+                        position: absolute;
+                        // transform: translate(50%,-50%);
+                        top: 40%;
+                        // right: 50%;
+                        // margin: 0 auto;
+                        text-align: center;
+                        align-items: center;
+                        h1 {
+                            span {
+                                @include mText($text-12xl, $fw-semi, $text-primary-100);
+                            }
+                            @include mText($text-12xl, $fw-normal, $text-primary-100);
+                        }
+                        p {
+                            @include mText($text-2xl, $fw-semi, $text-primary-100);
+                            @extend .mb-8;
+                        }
+                        .slide-btn {
+                            .shop-btn {
+                                text-decoration: none;
+                                @include mButton(
+                                    $text-base,
+                                    $fw-semi,
+                                    $text-primary-100,
+                                    20px 30px,
+                                    2px solid $bg-primary-100,
+                                    10px,
+                                    $bg-primary-100,
+                                    $text-primary-300
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .carousel-botom {
+        .row {
+            .col-4 {
+                padding: 0;
+                .carousel-items {
+                    position: relative;
+                    overflow: hidden;
+                    &:hover .overay{
+                        opacity: 1;
+                        transition: all 0.5s;
+                    }
+                    &:hover img{
+                        transform: scale(1.1, 1.1);
+                        transition: all 0.8s;
+                    }
+                    .overay{
+                        position: absolute;
+                        background: rgba(255, 255, 255, 0.222);
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 1;
+                        transition: all 0.5s;
+                        opacity: 0;
+                    }
+                    a {
+                        position: relative;
+                        img {
+                            width: 101%;
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -60,17 +60,19 @@ const HeaderMenu = () => {
             Profile
           </NavLink>
         </nav>
-        <NavLink
-          to={"/cart"}
-          className={(props) =>
-            props.isActive
-              ? "mx-2 bg-white text-dark p-3 text-decoration-none d-block mt-2"
-              : " d-block mt-2 mx-2 text-white link"
-          }
-          style={{ textDecoration: "none" }}
-        >
-          <i className="fa fa-cart-plus fs-2"></i>({cartStore.length})
-        </NavLink>
+        <a className="">
+          <NavLink
+            to={"/cart"}
+            className={(props) =>
+              props.isActive
+                ? "mx-2 bg-white text-dark p-3 text-decoration-none d-block mt-2"
+                : " d-block mt-2 mx-2 text-white link"
+            }
+            style={{ textDecoration: "none" }}
+          >
+            <i className="fa fa-cart-plus fs-2"></i>({cartStore.length})
+          </NavLink>
+        </a>
       </div>
     </header>
   );

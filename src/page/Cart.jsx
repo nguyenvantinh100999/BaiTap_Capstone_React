@@ -50,7 +50,6 @@ const Cart = () => {
               width={50}
               alt="..."
               style={{ cursor: "pointer" }}
-              href={`/deltail/${record.id}`}
             />
           </NavLink>
         );
