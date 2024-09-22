@@ -90,7 +90,7 @@ const Detail = () => {
                 <img src={item.image} alt="..." className="w-100" />
                 <div className="card-body">
                   <h3>{item.name}</h3>
-                  <p className="fs-2">{item.price}</p>
+                  <p className="fs-2">{item.price}$</p>
                   <NavLink to={`/detail/${item.id}`} className={"btn btn-dark"}>
                     View Detail
                   </NavLink>

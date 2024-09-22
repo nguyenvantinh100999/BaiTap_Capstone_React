@@ -14,7 +14,7 @@ const Cart = () => {
   const { userLogin } = useSelector((state) => state.userReducer);
   const cartStore = useSelector((state) => state.cartReducer.cart);
   const { profile } = useSelector((state) => state.userReducer);
-  console.log(userLogin);
+  // console.log(cartStore);
   // Check if the user is logged in
   const isLoggedIn = () => {
     return !!profile.email; // Assuming profile.email indicates login status

@@ -5,13 +5,13 @@ import { getProfileActionAsync } from "./userReducer";
 
 const initialState = {
   cart: [
-    {
-      id: 1,
-      name: "product 1000",
-      price: 1000,
-      quantity: 1,
-      image: "https://picsum.photos/200/200",
-    },
+    // {
+    //   // id: 1,
+    //   // name: "product 1000",
+    //   // price: 1000,
+    //   // quantity: 1,
+    //   // image: "https://picsum.photos/200/200",
+    // },
   ],
   cartOrder: [],
 };
@@ -25,7 +25,7 @@ const cartReducer = createSlice({
 
       const itemCart = state.cart.find((item) => item.id === payload.id);
       if (itemCart) {
-        itemCart.quantity += 1;
+        itemCart.quantity += payload.quantity;
       } else {
         state.cart.push(payload);
       }
