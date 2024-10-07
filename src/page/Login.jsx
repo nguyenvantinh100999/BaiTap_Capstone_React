@@ -19,8 +19,8 @@ const Login = () => {
   return (
     <div className="container">
       <h3 className="text-center">Login</h3>
-      <div className="mx-auto my-0 w-50">
-        <form onSubmit={frmLogin.handleSubmit} className="form-control">
+      <div className="mx-auto my-0 w-50 form-control">
+        <form onSubmit={frmLogin.handleSubmit} className="">
           <div className="form-group ">
             <label htmlFor="email">Email</label>
             <input
@@ -61,20 +61,20 @@ const Login = () => {
               Login
             </button>
           </div>
-          <div className="form-group my-2">
-            <div className="d-flex align-items-center justify-content-center text-center">
-              <button
-                className="btn btn-primary d-flex justify-content-center align-items-center"
-                style={{ backgroundColor: "rgb(76,105,186)" }}
-              >
-                <i class="fab fa-facebook-f"></i>
-                <div className="bg-primary d-inline">
-                  <LoginFacebook />
-                </div>
-              </button>
-            </div>
-          </div>
         </form>
+        <div className="form-group my-2">
+          <div className="d-flex align-items-center justify-content-center text-center">
+            <button
+              className="btn btn-primary d-flex justify-content-center align-items-center"
+              style={{ backgroundColor: "rgb(76,105,186)" }}
+            >
+              <i class="fab fa-facebook-f"></i>
+              <div className="bg-primary d-inline">
+                <LoginFacebook />
+              </div>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

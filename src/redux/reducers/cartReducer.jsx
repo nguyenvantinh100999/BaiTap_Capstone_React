@@ -25,7 +25,8 @@ const cartReducer = createSlice({
 
       const itemCart = state.cart.find((item) => item.id === payload.id);
       if (itemCart) {
-        itemCart.quantity += payload.quantity;
+        itemCart.quantity += payload.quantity
+        ;
       } else {
         state.cart.push(payload);
       }
